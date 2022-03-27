@@ -1,0 +1,121 @@
+@import "_var";
+
+
+
+.link,
+{
+  transition: color .2s ease-out, background-color .3s ease-in-out, padding .5s ease;
+}
+
+.socials__icon path {
+  transition: all .2s ease-out;
+}
+
+
+.link:hover,
+.nav-mobile__link:hover {
+  color: $hovercolor;
+}
+
+.link:focus,
+.nav-mobile__link:focus {
+  background-color: $focuscolor;
+  outline-offset: 3px;
+  padding: 0 5px;
+}
+
+.link:active,
+.nav-mobile__link:active {
+  color: $activcolor;
+  background-color: transparent;
+}
+
+
+.socials__link:hover path,
+.socials__search:hover path {
+  fill: $hovercolor;
+}
+
+.socials__link:focus path,
+.socials__search:focus path {
+  fill: $focuscolor;
+}
+
+.socials__link:active path,
+.socials__search:active path {
+  fill: $activcolor;
+}
+
+.btn_bg:hover {
+  background-color: $focuscolor;
+}
+
+.btn_tr:hover {
+  background-color: $hovercolor;
+}
+
+.btn_bg:focus {
+  background-color: $hovercolor;
+  border-color: $activcolor;
+}
+
+.btn_tr:focus {
+  background-color: $focuscolor;
+  border-color: $hovercolor;
+}
+
+.btn_tr:active,
+.btn_bg:active {
+  background-color: $activcolor;
+  border-color: $activcolor;
+}
+
+.nav-mobile__close-btn:hover,
+.popup__closebtn:hover,
+.search-form__closebtn:hover {
+  background-color: $hovercolor;
+}
+
+.nav-mobile__close-btn:focus,
+.popup__closebtn:focus,
+.search-form__closebtn:focus {
+  background-color: $focuscolor;
+  outline: none;
+}
+
+.nav-mobile__close-btn:active,
+.popup__closebtn:active,
+.search-form__closebtn:active {
+  background-color: $activcolor;
+
+}
+
+.form__textarea:hover::placeholder,
+.form__input:hover::placeholder {
+  color: $hovercolor;
+}
+
+.form__textarea:focus {
+  outline: 1px solid $hovercolor;
+}
+
+.form__input:focus {
+  outline-color: $hovercolor;
+}
+
+.form__textarea:focus::placeholder,
+.form__input:focus::placeholder {
+  color: #cacaca;
+}
+
+.search-form__input:hover,
+.search-form__input:focus {
+  border-bottom: 1px solid $hovercolor;
+}
+
+.search-form__input:active {
+  border-bottom: 1px solid $activcolor;
+}
+
+
+

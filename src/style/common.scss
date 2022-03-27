@@ -1,0 +1,128 @@
+@import "_mixin";
+@import "var";
+
+@include font-face("Roboto", roboto-bold, 700);
+@include font-face("Roboto", roboto-regular, 400);
+@include font-face("TT Firs Neue", TTFirsNeue-Bold, 700);
+@include font-face("TT Firs Neue", TTFirsNeue-Medium, 600);
+@include font-face("TT Firs Neue", TTFirsNeue-Regular, 400);
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  font-family: "TT Firs Neue", sans-serif;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+  width: 100%;
+}
+
+.btn {
+  padding: 12px 20px;
+  border: 3px solid transparent;
+  background-color: $hovercolor;
+  color: #fff;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: background-color .2s ease-in, border-color .2s ease-in;
+}
+
+
+body {
+  position: relative;
+  min-width: 320px;
+  overflow: auto;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 2em;
+  color: #333;
+  background-color: #fff;
+  font-weight: 400;
+}
+
+.flex {
+  display: flex;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.form {
+  &__label {
+    //height: 50px;
+    width: 100%;
+  }
+  &__input {
+    height: 50px;
+    width: 100%;
+    padding: 15px 23px;
+    font-size: 16px;
+    line-height: 19px;
+    color: #333;
+    background-color: #E9E9E9;
+    border: 1px solid transparent;
+    outline: none;
+
+    &_dark {
+      background-color: #4A4A4A;
+      color: #fff;
+    }
+    &_dark::placeholder {
+      color: #CACACA;
+    }
+  }
+  &__input::placeholder {
+    color: #999;
+  }
+  &__btn {
+  }
+}
+
+.header__top, .about-us, .footer {
+  background-color: #202020;
+}
+
+//* {
+//  outline: 1px solid red;
+//}

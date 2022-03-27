@@ -1,0 +1,323 @@
+@import "var";
+@import "mixin";
+
+.about-us {
+  $m-right: 30px;
+  &-container {
+    padding-top: 30px;
+    padding-bottom: 70px;
+    color: #ffffff;
+  }
+  &__left {
+    &-title {
+      margin: 0 0 5px;
+      letter-spacing: 1px;
+    }
+    &-descr {
+      color: #CACACA;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: .3px;
+    }
+  }
+  &__right {
+    padding-top: 33px;
+    &-photo {
+      margin-bottom: 25px;
+    }
+    &-title {
+      margin: 0 0 16px;
+      font-family: "TT Firs Neue", sans-serif;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 22px;
+    }
+    &-form {
+      justify-content: space-between;
+    }
+  }
+}
+
+.about-us__right-form .form__label {
+  margin-right: 30px;
+  position: relative;
+}
+
+.about-us__right-form .form__btn {
+  padding: 12px 17px;
+}
+
+.about-us__right-form .form__input::placeholder {
+  color: #CACACA;
+}
+
+.projects {
+  padding-top: 65px;
+  margin-bottom: 43px;
+  &__title {
+    margin: 0 0 13px;
+    letter-spacing: 1px;
+  }
+  &__card {
+    position: relative;
+    max-height: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    &-descr {
+      font-size: 16px;
+      line-height: 22px;
+      color: #202020;
+      letter-spacing: 0.3px;
+    }
+    &-date {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+      font-size: 12px;
+      line-height: 22px;
+      color: #999;
+    }
+    &-icon {
+      margin-right: 5px;
+    }
+    &-img {
+      margin-bottom: 17px;
+      min-height: 184px;
+    }
+    &-title {
+
+    }
+  }
+  &__card_big {
+    padding: 21px 30px 30px;
+    color: #fff;
+    .projects__card-title {
+      margin: 0 0 5px;
+      width: 45%;
+      font-family: "TT Firs Neue", sans-serif;
+      font-size: 24px;
+      line-height: 24px;
+
+    }
+    .projects__card-descr {
+      color: #fff;
+      letter-spacing: 0.3px;
+      width: 52%;
+    }
+
+    .projects__card-btn {
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 12px 18px;
+      background-color: transparent;
+      border: 3px solid $hovercolor;
+    }
+  }
+}
+
+.projects__card-date-big {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 22px;
+  margin-top: 0;
+  margin-bottom: 3px;
+  color: #fff;
+}
+
+.projects__card-descr_mob {
+  display: none;
+}
+
+.item11 {
+  @include before('#пейзаж', 7px, 6px);
+}
+.item12, .item17 {
+  @include before('#портрет', 7px, 6px);
+}
+.item13 {
+  @include before('#предмет', 7px, 6px);
+}
+
+.item14 {
+  @include bg;
+  @include before('#fuji', 7px, 6px);
+  background-image: url("images/projects/med-1920-1.webp");
+}
+
+.item15 {
+  @include bg;
+  @include before('#проектзабвение', 7px, 6px);
+  background-image: url("images/projects/med-1920-2.webp");
+}
+
+.item16 {
+  @include before('#ретушь', 7px, 6px);
+}
+
+.contacts {
+  padding-top: 23px;
+  margin-bottom: 70px;
+  &__title {
+    margin: 0 auto 16px;
+    letter-spacing: 1.2px;
+  }
+  &__map {
+    position: relative;
+    min-height: 460px;
+    padding-top: 6px;
+    overflow: hidden;
+    transition: filter .2s ease-in;
+  }
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+  transition: filter .4s ease-in-out;
+}
+
+[class*="inner-panes"]:hover [class*="ground-pane"],
+[class*="inner-panes"]:focus [class*="ground-pane"], {
+  filter: grayscale(0);
+}
+
+
+.contacts__request {
+
+  &-title {
+    margin: 0 0 5px;
+    font-family: TT Firs Neu, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: .6px;
+  }
+  &-descr {
+    margin: 0 0 14px;
+    line-height: 22px;
+    color: #999;
+    letter-spacing: .2px;
+  }
+
+  &-form {
+    flex-direction: column;
+  }
+
+  .form__label {
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .form__label_last {
+    margin-bottom: 11px;
+  }
+
+  .form__textarea {
+    height: 150px;
+    width: 100%;
+    padding: 16px 24px;
+    resize: none;
+    border: none;
+    outline: none;
+    background-color: #E9E9E9;
+    letter-spacing: .4px;
+
+  }
+
+  .form__textarea::placeholder {
+    color: #999;
+    letter-spacing: .4px;
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .form__btn {
+    padding: 12px 18px;
+    align-self: flex-start;
+  }
+}
+
+.popup {
+  //display: none;
+  position: absolute;
+  //bottom: 0;
+  height: 100%;
+  width: 410px;
+  padding: 26px 50px 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(#202020, .85);
+  color: #fff;
+  z-index: 10;
+  &__closebtn {
+    position: absolute;
+    top: 21px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    background-color: #666;
+    transition: background-color .2s ease-in-out;
+  }
+  &__title {
+    margin: -5px 0 5px;
+    font-family: TT Firs Neu, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: .5px;
+
+  }
+  &__descr {
+    margin: 0 0 3px;
+    font-size: 16px;
+    line-height: 28px;
+    color: #cacaca;
+    letter-spacing: .2px;
+  }
+  &__tel {
+    margin: 0;
+    font-family: TT Firs Neu, sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: .5px;
+
+    svg {
+      margin-right: -5px;
+      vertical-align: middle;
+
+    }
+  }
+  &__tel_table {
+    display: none;
+    color: $hovercolor;
+  }
+
+}
+
+.js-validate-error-label {
+  position: absolute;
+  font-size: 9px;
+  top: -8px;
+  left: 23px;
+}
+
+.form__input.js-validate-error-field {
+  color: #202020 !important;
+}
+
+.form__input_dark.js-validate-error-field {
+  color: #cacaca !important;
+}
+
+.form__input::placeholder {
+  transition: color .2s ease-in-out;
+}
+
+

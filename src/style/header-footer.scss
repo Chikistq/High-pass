@@ -1,0 +1,389 @@
+@import "var";
+@import "mixin";
+
+.header {
+  margin-bottom: 28px;
+  &__top {
+    padding: 25px 0 13px;
+    &-logo-link {
+      &-img {
+        height: auto;
+        width: 190px;
+      }
+    }
+
+    &-nav {
+      align-self: baseline;
+    }
+  }
+
+
+  &__mobile {
+    display: none;
+    position: relative;
+    background-color: #4A4A4A;
+    padding: 6px 0 7px;
+
+    &-burger {
+      display: none;
+    }
+
+
+  }
+
+  &__hero {
+    padding: 40px 0;
+    &-left {
+      position: relative;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: #fff;
+
+      @include before('#мастеркласс', 16px, 16px);
+      &-descr {
+        margin: auto 0 3px;
+        letter-spacing: .2px;
+        font-size: 16px;
+        line-height: 19px;
+      }
+      &-title {
+        font-family: "TT Firs Neue", sans-serif;
+        font-size: 36px;
+        line-height: 104%;
+        font-weight: 700;
+        margin: 0 0 18px;
+
+      }
+      &-btn {
+        padding: 12px 20px;
+        letter-spacing: -0.3px;
+      }
+    }
+
+    &-right {
+      &-title {
+        position: relative;
+        top: -4px;
+        margin: 0 0 19px;
+        font-family: "TT Firs Neue", sans-serif;
+        font-size: 24px;
+        line-height: 104%;
+        font-weight: 700;
+      }
+      &-img {
+        width: 100%;
+        //height: 100%;
+      }
+    }
+  }
+}
+
+.header__mobile-menu {
+  //display: none;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 83px 21px 35px;
+  z-index: 10;
+  width: 100%;
+  max-height: 611px;
+  height: 0;
+  overflow-y: auto;
+  transform: translateY(-300px);
+  background-color: #202020;
+  transition: transform .4s ease-in-out, height 0.4s ease-in-out;
+}
+
+
+.header__mobile-menu.open {
+  display: flex;
+  height: 100%;
+  transform: translateY(0);
+}
+
+.nav-mobile__close-btn {
+  display: none;
+  transition: background-color .2s ease-in;
+}
+
+.header__top.open {
+  position: absolute;
+  z-index: 102;
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+.header__mobile.open {
+  padding: 83px 0 5px;
+}
+
+
+.nav-mobile__close-btn {
+  margin-bottom: 13px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 50%;
+  background-color: #666;
+}
+
+
+
+.menu {
+  &__lists {
+    flex-wrap: wrap;
+  }
+  &__link {
+    font-size: 16px;
+    line-height: 21px;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+}
+
+.header__top-nav.menu {
+  width: 105%;
+}
+
+.header__top-nav .menu__lists {
+  justify-content: flex-start;
+  position: relative;
+  top: -1px;
+}
+
+.header__top-nav .menu__list:not(:last-child), {
+  margin-right: 80px;
+}
+
+.header__mobile-nav .menu__lists {
+  justify-content: space-between;
+}
+
+
+
+
+.socials {
+  min-width: 190px;
+
+  &__lists {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &__list {
+    &:not(:nth-last-child(-n+2)) {
+      margin-right: 19px;
+    }
+  }
+  &__icon {
+    height: 31px;
+    width: 31px;
+  }
+  &__search {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+}
+
+.icon-search {
+  display: none;
+}
+
+.header__top-search {
+  position: absolute;
+  //display: none;
+}
+
+.search-form {
+  position: absolute;
+  display: none;
+  //display: flex;
+  right: 30px;
+  justify-content: flex-end;
+  max-width: 340px;
+  width: 100%;
+  background-color: transparent;
+  &__label {
+    width: 100%;
+    position: relative;
+    top: -4px;
+  }
+  &__input {
+    width: 100%;
+    padding: 4px 0 1px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #E9E9E9;
+    outline: none;
+    letter-spacing: 0.2px;
+    transition: border-bottom-color .2s ease-in-out;
+    color: #E9E9E9;
+    font-family: TT Firs Neu, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    &::placeholder {
+      font-family: TT Firs Neu, sans-serif;
+      font-size: 16px;
+      line-height: 16px;
+      color: #E9E9E9;
+    }
+  }
+  &__closebtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 9px;
+    border: none;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: #c4c4c4;
+    transition: background-color .2s ease-in-out;
+
+  }
+}
+
+.search-form.is-opened {
+  display: none;
+}
+
+.socials__search.is-opened {
+  display: inline-block;
+}
+
+
+
+.photo1 {
+  @include bg;
+  background-image: url("images/hero/1-1920.webp");
+}
+
+
+
+.header__mobile-burger {
+  width: 20px;
+  height: 26px;
+  padding: 10px;
+  position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header__mobile-burger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  opacity: 1;
+  left: 0;
+}
+
+.header__mobile-burger span:nth-child(1) {
+  top: 0;
+  transform-origin: 1px 3px;
+}
+
+.header__mobile-burger span:nth-child(2) {
+  top: 8px;
+  width: 100%;
+  transform-origin: 3px 1px;
+}
+
+.header__mobile-burger span:nth-child(3) {
+  top: 16px;
+  width: 50%;
+}
+
+
+.nav-mobile {
+  &__list {
+    margin-bottom: 29px;
+    color: #fff;
+    font-family: TT Firs Neu, sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+  }
+
+  &-tel {
+    display: block;
+    margin-top: auto;
+    font-family: TT Firs Neu, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: .5px;
+    color: $hovercolor;
+    svg {
+      margin-right: -10px;
+      vertical-align: middle;
+      path {
+        fill: $hovercolor;
+      }
+    }
+  }
+
+}
+
+
+.footer {
+  padding: 22px 0;
+  color: #CACACA;
+
+  &__logo {
+    margin-right: 205px;
+    &-link-img {
+      width: 190px;
+      margin: 3px 0 5px;
+    }
+    &-descr {
+      font-size: 14px;
+      line-height: 18px;
+      font-family: TT Firs Neu, sans-serif;
+      color: #E9E9E9;
+      letter-spacing: 0.4px;
+    }
+  }
+
+  &__quote {
+    flex-direction: column;
+    max-width: 361px;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    span {
+      color: #666;
+    }
+  }
+
+  &__socials {
+    margin-left: auto;
+    text-align: right;
+    &-descr {
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 9px;
+    }
+  }
+}
+
+.footer .socials__list:not(:last-child) {
+  margin-right: 21px;
+}
+
+.footer .socials__list:last-child {
+  margin-right: 10px;
+}
+
+.footer > div {
+  justify-content: flex-start;
+}

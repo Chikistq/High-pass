@@ -1,0 +1,31 @@
+@mixin font-face($font-family, $file-name, $weight) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: normal;
+    font-display: swap;
+    src: local($font-family), url("./resource/fonts/#{$file-name}.woff2") format("woff2"), url("./resource/fonts/#{$file-name}.woff") format("woff");
+  }
+}
+
+@mixin before($content, $top, $right) {
+  &::before {
+    content: "#{$content}";
+    position: absolute;
+    top: $top;
+    right: $right;
+    padding: 7px 15px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+}
+
+@mixin bg {
+  background-color: rgba(#333, .5);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
